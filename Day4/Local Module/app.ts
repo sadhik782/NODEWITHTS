@@ -1,0 +1,15 @@
+import { logActivity } from "./logger";
+
+
+function login(username:string, password:string) {
+  try {
+    logActivity(username, "login function and trying to log in");
+    //business logic for login
+    if (username == "sadhik" && password == "123") {
+      logActivity(username, "credentails are validated");
+    } else logActivity(username, "invalid user");
+  } catch (e) {
+    logActivity(username, "login - there was an exception" + e);
+  }
+}
+login("sadhik","123")
